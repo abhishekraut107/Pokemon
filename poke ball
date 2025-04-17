@@ -1,1 +1,912 @@
+1. Responsive Multi-Column Form with Flexbox by Using HTML and CSS Responsive 
+== 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Perfect Responsive Form</title> 
+  <style> 
+    * { 
+      box-sizing: border-box; 
+    } 
+ 
+    body {       margin: 0;       font-family: 'Poppins', sans-serif;       background-color: #f0f2f5; 
+      padding: 40px; 
+    } 
+ 
+    .form-container {       max-width: 900px;       margin: auto;       background-color: #fff;       padding: 30px;       border-radius: 12px; 
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    } 
+ 
+    h2 { 
+      text-align: center;       color: #333;       margin-bottom: 30px; 
+    } 
+ 
+    form {       display: flex;       flex-wrap: wrap; 
+      gap: 20px; 
+    } 
+ 
+    .form-group {       flex: 1 1 45%;       display: flex; 
+      flex-direction: column; 
+    } 
+ 
+    .form-group.full-width { 
+      flex: 1 1 100%; 
+    } 
+ 
+    label { 
+      margin-bottom: 6px;       font-weight: 600; 
+      color: #444; 
+    } 
+ 
+    input, select, textarea {       padding: 10px 14px;       font-size: 16px;       border: 1px solid #ccc;       border-radius: 6px; 
+      transition: border-color 0.3s ease; 
+    } 
+ 
+    input:focus, select:focus, textarea:focus {       border-color: #007bff;       outline: none; 
+    } 
+ 
+    textarea {       resize: vertical; 
+    } 
+ 
+    .submit-btn {       flex: 1 1 100%; 
+      text-align: center; 
+    } 
+ 
+    button {       background-color: #007bff;       color: white;       padding: 12px 30px;       border: none;       border-radius: 6px;       font-size: 16px;       cursor: pointer;       transition: background 0.3s ease; 
+    } 
+ 
+    button:hover { 
+      background-color: #0056b3; 
+    } 
+    @media (max-width: 768px) { 
+      .form-group {         flex: 1 1 100%;       } 
+    } 
+  </style> 
+</head> 
+<body> 
+ 
+  <div class="form-container"> 
+    <h2>Registration Form</h2> 
+    <form> 
+      <div class="form-group"> 
+        <label for="fname">First Name</label> 
+        <input type="text" id="fname" name="fname" required> 
+      </div> 
+ 
+      <div class="form-group"> 
+        <label for="lname">Last Name</label> 
+        <input type="text" id="lname" name="lname" required> 
+      </div> 
+ 
+      <div class="form-group"> 
+        <label for="email">Email Address</label> 
+        <input type="email" id="email" name="email" required> 
+      </div> 
+ 
+      <div class="form-group"> 
+        <label for="mobile">Mobile Number</label> 
+        <input type="tel" id="mobile" name="mobile" required> 
+      </div> 
+ 
+      <div class="form-group"> 
+        <label for="dob">Date of Birth</label> 
+        <input type="date" id="dob" name="dob"> 
+      </div> 
+ 
+      <div class="form-group"> 
+        <label for="gender">Gender</label> 
+        <select id="gender" name="gender"> 
+          <option value="" disabled selected>Select</option> 
+          <option value="male">Male</option> 
+          <option value="female">Female</option> 
+          <option value="other">Other</option> 
+        </select> 
+      </div> 
+ 
+      <div class="form-group full-width"> 
+        <label for="address">Address</label> 
+        <textarea id="address" name="address" rows="4"></textarea> 
+      </div> 
+ 
+      <div class="submit-btn"> 
+        <button type="submit">Register</button> 
+      </div> 
+    </form> 
+  </div> 
+ 
+</body> 
+</html> 
+ 
+2. Hamburger Menu 
+== 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+    <link rel="stylesheet" href="style.css">  
+</head> 
+<body> 
+     
+    <input type="checkbox" id="menu-toggle"/> 
+    <label class="menu-btn" for="menu-toogle"> 
+    <span></span> 
+    </label> 
+ 
+    <nav class="menu"> 
+        <a href="#">Home</a> 
+        <a href="#">About</a> 
+        <a href="#">Services</a> 
+    </nav> 
+</body> 
+</html> 
+ 
+*{ 
+    box-sizing: border-box; 
+} 
+body{ 
+    margin: 0; 
+    font-family: Arial, Helvetica, sans-serif; 
+} 
+#menu-toogle{ 
+    display: none; 
+} 
+ 
+.menu-btn{ 
+    position: fixed; 
+    top: 20px;     right: 20px;     width: 30px;     height: 22px;     cursor: pointer; 
+    z-index: 999; 
+} 
+.menu-btn span, 
+.menu-btn::before, 
+.menu-btn::after{ 
+    content: '';     position: absolute;     height: 4px;     width: 100%;     background: #333;     transition: all 0.4s ease; 
+    border-radius: 2px; 
+} 
+.menu-btn span{ 
+    top: 9px; 
+} 
+.menu-btn::before{ 
+    top: 0; 
+} 
+.menu-btn::after{ 
+    bottom: 0; 
+} 
+#menu-toggle:checked + .menu-btn::before{     transform: rotate(45deg);     top: 9px; 
+ 
+} 
+#menu-toggle:checked + .menu-btn::after{     transform: rotate(-45deg); 
+    bottom: 9px; 
+} 
+#menu-toggle:checked + .menu-btn span{ 
+    opacity: 0; 
+} 
+.menu{ 
+    position: fixed;     top: 0;     right: -100%;     width: 100%;     height: 100vh;     background: #111;     color: white;     display: flex;     flex-direction: column;     justify-content: center;     transition: right 0.5s ease; 
+    z-index: 0; 
+} 
+#menu-toggle:checked ~ .menu{ 
+    right:0; 
+} 
+.menu a{ 
+    color: white;     text-decoration: none;     font-size:2rem;     margin: 1rwm 0; 
+    transition: color 0.3s ease; 
+} 
+.menu a:hover{ 
+    color: #f90; 
+} 
+ 
+. 
+3. Creates accessible and responsive custom 
+a)	form elements (dropdown, checkbox, radio button) 
+b)	using real-world data (like country list, skills,and gender) 
+     == 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <title>Accessible Responsive Form</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+  <div class="form-container"> 
+    <h2>Registration Form</h2> 
+    <form> 
+      <label for="country">Country</label> 
+      <select id="country" name="country" required> 
+        <option value="">--Select Country--</option> 
+        <option value="india">India</option> 
+        <option value="usa">United States</option> 
+        <option value="uk">United Kingdom</option> 
+        <option value="canada">Canada</option> 
+        <option value="australia">Australia</option> 
+      </select> 
+      <fieldset> 
+        <legend>Skills</legend> 
+        <label><input type="checkbox" name="skills" value="html"> HTML</label> 
+        <label><input type="checkbox" name="skills" value="css"> CSS</label> 
+        <label><input type="checkbox" name="skills" value="js"> JavaScript</label> 
+        <label><input type="checkbox" name="skills" value="python"> 
+Python</label> 
+      </fieldset> 
+      <fieldset> 
+        <legend>Gender</legend> 
+        <label><input type="radio" name="gender" value="male" required> 
+Male</label> 
+        <label><input type="radio" name="gender" value="female"> Female</label> 
+        <label><input type="radio" name="gender" value="other"> Other</label> 
+      </fieldset> 
+ 
+      <button type="submit">Submit</button> 
+    </form> 
+  </div> 
+ 
+</body> 
+</html> 
+ 
+ 
+* { 
+  box-sizing: border-box; 
+} 
+ 
+body { 
+  font-family: 'Segoe UI', sans-serif; 
+  background: #f0f4f8; 
+  margin: 0;   padding: 0; 
+} 
+ 
+.form-container {   max-width: 500px;   margin: 40px auto;   padding: 30px;   background: #fff;   border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+} 
+ 
+h2 {   text-align: center;   margin-bottom: 20px;   color: #333; 
+} 
+ 
+label, legend {   display: block;   margin-bottom: 10px;   font-weight: 600;   color: #333; 
+} 
+ 
+input[type="checkbox"], input[type="radio"] { 
+  margin-right: 10px; 
+} 
+ 
+input[type="text"], select {   width: 100%;   padding: 10px;   margin-bottom: 20px;   border: 1px solid #ccc;   border-radius: 4px; 
+} 
+ 
+fieldset {   margin-bottom: 20px;   border: none;   padding: 0; 
+} 
+ 
+button {   width: 100%;   padding: 12px;   background-color: #0066cc;   color: white;   border: none;   border-radius: 6px;   font-size: 16px;   cursor: pointer;   transition: 0.3s ease; 
+} 
+ 
+button:hover {   background-color: #004d99; 
+} 
+ 
+@media (max-width: 600px) {   .form-container {     padding: 20px; 
+  } 
+} 
+        4. You are developing a web form that collects specific user input by restricting values                    using the min and max at1 
+               Enter a date before January 1, 1980,                 Enter a date after January 1, 2000,                 Enter a quantity between 1 and 5.  
+       == 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Input Restrictions with min and max</title> 
+</head> 
+<body>    
+ 
+  <h1>The input min and max attributes</h1> 
+ 
+  <form> 
+    <label for="before1980">Enter a date before 1980-01-01:</label><br>     <input type="date" id="before1980" name="before1980" max="1979-12-31" required><br><br> 
+ 
+    <label for="after2000">Enter a date after 2000-01-01:</label><br> 
+    <input type="date" id="after2000" name="after2000" min="2000-01-02" required><br><br> 
+    <label for="quantity">Quantity (between 1 and 5):</label><br> 
+    <input type="number" id="quantity" name="quantity" min="1" max="5" required><br><br> 
+ 
+    <button type="submit">Submit</button> 
+  </form> 
+ 
+</body> 
+</html> 
+    
 
+5.Create atraffic light signal 
+ 
+  == 
+         <!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Traffic Light Signal</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+  <h2>Traffic Light Signal</h2> 
+ 
+  <div class="traffic-light"> 
+    <div class="light red"></div> 
+    <div class="light yellow"></div> 
+    <div class="light green"></div> 
+  </div> 
+ 
+</body> 
+</html> 
+ 
+body {   display: flex;   flex-direction: column;   align-items: center;   justify-content: center;   min-height: 100vh;   background: #f0f0f0; 
+  font-family: Arial, sans-serif; 
+} 
+ 
+h2 {   margin-bottom: 20px; 
+} 
+ 
+.traffic-light {   width: 100px;   background-color: #333;   border-radius: 20px;   padding: 20px 10px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+} 
+ 
+.light {   width: 60px;   height: 60px;   margin: 15px auto;   border-radius: 50%;   background-color: #555;   box-shadow: inset 0 0 10px rgba(0,0,0,0.5); 
+} 
+ 
+.red {   background-color: red; 
+} 
+ 
+.yellow {   background-color: yellow; 
+} 
+ 
+.green { 
+  background-color: green; 
+} 
+ 
+             
+6. Complex Table Design - Style a large HTML table with alternating row colors, fixed headers, and responsive behavior. 
+ 
+== 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Complex Table Design</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+  <h2>Responsive Complex Table</h2> 
+ 
+  <div class="table-container"> 
+    <table> 
+      <thead> 
+        <tr> 
+          <th>#</th> 
+          <th>Name</th> 
+          <th>Department</th> 
+          <th>Email</th> 
+          <th>Location</th> 
+          <th>Status</th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+         
+        <tr> 
+          <td>1</td> 
+          <td>Jane Doe</td> 
+          <td>Marketing</td> 
+          <td>jane.doe@example.com</td> 
+          <td>New York</td> 
+          <td>Active</td> 
+        </tr> 
+        <tr> 
+          <td>2</td> 
+          <td>John Smith</td> 
+          <td>IT</td> 
+          <td>john.smith@example.com</td> 
+          <td>California</td> 
+          <td>Inactive</td> 
+        </tr> 
+        <tr> 
+          <td>3</td> 
+          <td>Emily Johnson</td> 
+          <td>Finance</td> 
+          <td>emily.j@example.com</td> 
+          <td>Texas</td> 
+          <td>Active</td> 
+        </tr> 
+         
+      </tbody> 
+    </table> 
+  </div> 
+ 
+</body> 
+</html> 
+ 
+body {   font-family: Arial, sans-serif;   background: #f4f4f4;   margin: 0;   padding: 20px; 
+} 
+ 
+h2 {   text-align: center; 
+  margin-bottom: 20px; 
+} 
+ 
+.table-container {   overflow-x: auto;   max-width: 100%;   background: #fff;   border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+} 
+ 
+table {   border-collapse: collapse;   width: 100%;   min-width: 600px; 
+} 
+ 
+thead {   background-color: #333;   color: white; 
+  position: sticky;   top: 0; 
+  z-index: 1; 
+} 
+ 
+th, td { 
+  padding: 12px 15px;   text-align: left;   border-bottom: 1px solid #ddd; 
+} 
+ 
+tbody tr:nth-child(even) { 
+  background-color: #f9f9f9; 
+} 
+ 
+tbody tr:hover { 
+  background-color: #f1f1f1; 
+} 
+7. Real world scenario E-commerce dropdown menu 
+== 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>E-commerce Dropdown Menu</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+  <nav class="navbar"> 
+    <ul> 
+      <li><a href="#">Home</a></li> 
+      <li class="dropdown"> 
+        <a href="#">Shop ▼</a> 
+        <ul class="dropdown-menu"> 
+          <li><a href="#">Clothing</a></li> 
+          <li><a href="#">Electronics</a></li> 
+          <li><a href="#">Accessories</a></li> 
+        </ul> 
+      </li> 
+      <li><a href="#">Contact</a></li> 
+    </ul> 
+  </nav> 
+ 
+</body> 
+</html> 
+ 
+body { 
+  margin: 0;   font-family: Arial, sans-serif; 
+} 
+ 
+.navbar {   background: #333; 
+} 
+ 
+.navbar ul {   list-style: none;   padding: 0;   margin: 0;   display: flex; 
+} 
+ 
+.navbar li {   position: relative; 
+} 
+ 
+.navbar a {   display: block;   padding: 14px 20px;   color: white;   text-decoration: none; 
+} 
+ 
+.navbar a:hover {   background: #444; 
+} 
+ 
+.dropdown-menu {   display: none;   position: absolute;   background: #444;   min-width: 150px;   top: 100%; 
+  left: 0; 
+} 
+ 
+.dropdown-menu li a { 
+  padding: 10px 15px; 
+} 
+ 
+.dropdown:hover .dropdown-menu {   display: block; 
+} 
+ 
+ 
+8. build a tabbed navigation system that switches content on click using only css == 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+     
+    <div class="tabs-container"> 
+        <input type="radio" id="tab1" name="tabs" checked> 
+        <input type="radio" id="tab2" name="tabs"> 
+        <input type="radio" id="tab3" name="tabs"> 
+ 
+        <label for="tab1" class="tab-label">Property Details</label> 
+        <label for="tab2" class="tab-label">Photos</label> 
+        <label for="tab3" class="tab-label">Contact Info</label> 
+ 
+        <div class="tab-content" id="content1"> 
+            <h2>Property Details</h2> 
+            <p><strong>Address:</strong> 1234 Elm Street, springfield</p> 
+            <p><strong>Price:</strong>$350,000</p> 
+            <p><strong>Bedrooms:</strong>4</p> 
+            <p><strong>Bathrooms:</strong>3</p> 
+            <p><strong>Year Built:</strong>2015</p> 
+            <p><strong>Description</strong>A beautiful modern home with flowers</p> 
+ 
+        </div> 
+        <div class="tab-content" id="content2"> 
+            <h2>photos</h2> 
+            <div class="Photo-galarry"> 
+                <img src="image link"> 
+                <img src="image link"> 
+                <img src="image link"> 
+            </div> 
+        </div> 
+        <div class="tab-content" id="content3"> 
+            <h2>Contact Info</h2> 
+            <p><strong>Agent Name:</strong>John Doe</p> 
+            <p><strong>Email:</strong>john.doe@example.com</p> 
+            <p><strong>Phone:</strong>9656366356</p> 
+            <p><strong>office number:</strong>Mon-fri: 9:00 AM - 5:00 PM</p> 
+        </div> 
+    </div> 
+</body> 
+</html> 
+ 
+*{     margin: 0;     padding: 0; 
+    box-sizing: border-box; 
+} 
+body{ 
+    font-family: Arial, Helvetica, sans-serif;     background-color: #f4f4f4; 
+    padding: 20px; 
+} 
+.tabs-container{     width: 100%;     max-width: 900px;     margin: 0 auto;     border: 1px solid #ddd;     border-radius: 8px; 
+    background-color: #fff; 
+} 
+input[type="radio"] { 
+    display: none; 
+} 
+.tab-label{     display:inline-block;     padding: 15px;     text-align: center;     background-color: #f4f4f4;     border: 1px solid #ddd;     cursor:pointer; 
+    transition:background-color 0.3s ease, color red; 
+} 
+.tab-label:active{ 
+    background-color: #bbb; 
+} 
+.tab-content{     display: none;     padding: 20px;     background-color: #fff;     border-top: 1px solid #ddd; 
+} 
+input#tab1:checked ~ .tab-content#content1, input#tab2checked ~ .tab-content#content2 
+input#tab3checked ~ .tab-content#content3{     display: block; 
+} 
+input#tab1:checked ~ .tab-label[for="tab1"] input#tab1:checked ~ .tab-label[for="tab1"], input#tab1:checked ~ .tab-label[for="tab1"]{     background-color: navajowhite; 
+    color: #fff; 
+} 
+.photo-gallery{     display:grid;     height: auto;     border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+} 
+ 
+ 
+9. Glassmorphic card design 
+== 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Glassmorphic Card 2</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+  <div class="glass-container"> 
+    <div class="glass-card"> 
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile 
+Icon"> 
+      <h3>John Doe</h3> 
+      <p>UI/UX Designer | Front-End Dev</p> 
+      <a href="#">View Profile</a> 
+    </div> 
+  </div> 
+ 
+</body> 
+</html> 
+ 
+ 
+body {   margin: 0;   padding: 0;   height: 100vh; 
+  background: linear-gradient(135deg, #2c3e50, #3498db);   display: flex;   justify-content: center;   align-items: center; 
+  font-family: 'Segoe UI', sans-serif; 
+} 
+ 
+.glass-container {   display: flex;   justify-content: center;   align-items: center; 
+} 
+ 
+.glass-card { 
+  background: rgba(255, 255, 255, 0.1);   border-radius: 20px;   padding: 30px;   width: 260px;   text-align: center;   color: #fff;   backdrop-filter: blur(12px);   -webkit-backdrop-filter: blur(12px);   border: 1px solid rgba(255, 255, 255, 0.2);   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); 
+  transition: 0.3s ease; 
+} 
+ 
+.glass-card:hover {   transform: scale(1.03); 
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2); 
+} 
+ 
+.glass-card img {   width: 80px;   border-radius: 50%;   margin-bottom: 15px; 
+  border: 2px solid rgba(255, 255, 255, 0.3); 
+} 
+ 
+.glass-card h3 { 
+  margin: 10px 0 5px; 
+} 
+ 
+.glass-card p {   font-size: 14px; 
+  margin-bottom: 15px; 
+} 
+ 
+.glass-card a {   display: inline-block;   padding: 8px 16px;   background: rgba(255, 255, 255, 0.2);   border-radius: 8px;   color: #fff;   text-decoration: none; 
+  transition: 0.3s; 
+} 
+ 
+.glass-card a:hover { 
+  background: rgba(255, 255, 255, 0.4); 
+} 
+10. CSS Scroll Snap - Implement a horizontal ly scrollin g sectio where each item snaps into place 
+ == 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Featured Products Scroll Snap</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+  <h2 style="text-align:center;">Featured Products</h2> 
+ 
+  <div class="product-scroll"> 
+    <div class="product-card"> 
+      <img src="https://via.placeholder.com/150" alt="Product 1"> 
+      <h3>Wireless Headphones</h3> 
+      <p>₹1,999</p> 
+    </div> 
+ 
+    <div class="product-card"> 
+      <img src="https://via.placeholder.com/150" alt="Product 2"> 
+      <h3>Smart Watch</h3> 
+      <p>₹2,499</p> 
+    </div> 
+ 
+    <div class="product-card"> 
+      <img src="https://via.placeholder.com/150" alt="Product 3"> 
+      <h3>Bluetooth Speaker</h3> 
+      <p>₹999</p> 
+    </div> 
+ 
+    <div class="product-card"> 
+      <img src="https://via.placeholder.com/150" alt="Product 4"> 
+      <h3>Fitness Band</h3> 
+      <p>₹1,499</p> 
+    </div> 
+  </div> 
+ 
+</body> 
+</html> 
+ 
+body {   margin: 0;   padding: 0;   font-family: 'Segoe UI', sans-serif; 
+  background: #f4f4f4; 
+} 
+ 
+h2 { 
+  margin-top: 20px; 
+} 
+ 
+.product-scroll {   display: flex;   overflow-x: auto;   scroll-snap-type: x mandatory;   gap: 20px; 
+  padding: 20px; 
+} 
+ 
+.product-card {   scroll-snap-align: start;   background: #fff;   border-radius: 10px;   box-shadow: 0 6px 16px rgba(0,0,0,0.1);   padding: 15px;   min-width: 200px;   flex: 0 0 auto;   text-align: center; 
+  transition: transform 0.3s; 
+} 
+ 
+.product-card img {   width: 100%;   border-radius: 8px; 
+} 
+ 
+.product-card h3 {   font-size: 1.1rem; 
+  margin: 10px 0 5px; 
+} 
+ 
+.product-card p {   font-weight: bold;   color: #4e73df; 
+  margin: 0; 
+} 
+ 
+.product-card:hover { 
+  transform: scale(1.05); 
+} 
+ 
+.product-scroll::-webkit-scrollbar { 
+  height: 8px; 
+} 
+.product-scroll::-webkit-scrollbar-thumb {   background: #aaa; 
+  border-radius: 4px; 
+} 
+ 
+ 
+11. Create a parallax scrolling effect where background images move slower than foreground content. 
+Constraints: 
+No JavaScript. 
+Must work on mobile (no background-attachment: fixed). 
+== 
+ 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>CSS Parallax Without Images</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+  <section class="parallax layer1"> 
+    <div class="text-box"> 
+      <h1>Parallax Layer 1</h1> 
+    </div> 
+  </section> 
+ 
+  <section class="content"> 
+    <h2>Simple & Clean</h2> 
+    <p>This section scrolls over a slower-moving background using only colors and CSS.</p>   </section> 
+ 
+  <section class="parallax layer2"> 
+    <div class="text-box"> 
+      <h1>Parallax Layer 2</h1> 
+    </div> 
+  </section> 
+ 
+  <section class="content"> 
+    <h2>100% CSS-Based</h2> 
+    <p>No images or JavaScript required. Perfect for modern responsive layouts.</p>   </section> 
+ 
+  <section class="parallax layer3"> 
+    <div class="text-box"> 
+      <h1>Parallax Layer 3</h1> 
+    </div> 
+  </section> 
+ 
+</body> 
+</html> 
+ 
+ 
+* { 
+  margin: 0;   padding: 0; 
+  box-sizing: border-box; 
+} 
+ 
+body, html {   font-family: sans-serif; 
+  scroll-behavior: smooth; 
+} 
+ 
+.parallax {   height: 100vh;   display: flex;   align-items: center;   justify-content: center;   position: relative; 
+  transform: translateZ(0); /* GPU acceleration */   will-change: transform; 
+} 
+ 
+.layer1 { 
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb); 
+} 
+ 
+.layer2 { 
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee); 
+} 
+ 
+.layer3 { 
+  background: linear-gradient(135deg, #f6d365, #fda085); 
+} 
+ 
+.text-box { 
+  background-color: rgba(255, 255, 255, 0.8);   padding: 40px 60px;   border-radius: 10px;   text-align: center; 
+} 
+ 
+.text-box h1 {   font-size: 2.5rem; 
+  color: #333; 
+} 
+ 
+.content {   padding: 60px 20px;   text-align: center; 
+  background-color: #fff; 
+} 
+ 
+.content h2 {   margin-bottom: 15px;   font-size: 2rem; 
+  color: #333; 
+} 
+ 
+.content p {   font-size: 1.1rem;   color: #555;   max-width: 600px; 
+  margin: auto; 
+} 
+ 
+12. Bonus Challenge: CSS-Only Dark Mode Toggle Problem: 
+Implement a dark/light mode toggle switch using only CSS (no JS). 
+Constraints: 
+Use :checked and CSS variables. 
+Must persist +++state (hint: target or prefers-color-scheme). 
+== 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>CSS-Only Dark Mode Toggle</title> 
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ 
+  <input type="checkbox" id="dark-toggle" class="dark-toggle"> 
+  <label for="dark-toggle" class="toggle-btn" aria-label="Toggle Dark Mode"></label>   <main> 
+    <h1>CSS-Only Dark Mode</h1> 
+    <p>This switch toggles light and dark mode using only HTML and CSS — no JavaScript required!</p> 
+  </main> 
+ 
+</body> 
+</html> 
+ 
+ 
+ 
+:root { 
+  --bg-color: #ffffff; 
+  --text-color: #111111; 
+  --accent-color: #007bff; 
+} 
+@media (prefers-color-scheme: dark) { 
+  :root { 
+    --bg-color: #111111; 
+    --text-color: #ffffff; 
+    --accent-color: #0dcaf0; 
+  } 
+} 
+body { 
+  background-color: var(--bg-color); 
+  color: var(--text-color);   font-family: sans-serif;   margin: 0;   padding: 2rem; 
+  transition: background-color 0.4s, color 0.4s; 
+} 
+ 
+main {   max-width: 600px;   margin: 100px auto; 
+  text-align: center; 
+} 
+ 
+h1 {   font-size: 2.5rem; 
+  margin-bottom: 1rem; 
+} 
+ 
+p { 
+  font-size: 1.2rem; 
+} 
+.dark-toggle { 
+  display: none; 
+} 
+ 
+.toggle-btn {   position: fixed;   top: 20px; 
+  right: 20px;   background: var(--accent-color);   padding: 10px 16px;   border-radius: 30px;   cursor: pointer;   width: 40px;   height: 20px; 
+  transition: background 0.3s ease; 
+} 
+ 
+.toggle-btn::before {   content: "";   position: absolute;   top: 50%;   left: 4px;   width: 14px;   height: 14px;   border-radius: 50%;   background-color: white;   transition: transform 0.3s ease; 
+  transform: translateY(-50%); 
+} 
+.dark-toggle:checked ~ body, 
+.dark-toggle:checked ~ main { 
+  --bg-color: #111111; 
+  --text-color: #ffffff; 
+  --accent-color: #0dcaf0; 
+} 
+ 
+.dark-toggle:checked ~ .toggle-btn { 
+  background: #0dcaf0; 
+} 
+ 
+.dark-toggle:checked ~ .toggle-btn::before { 
+  transform: translateY(-50%) translateX(20px); 
+}
